@@ -1,0 +1,22 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="150"
+  height="36"
+  viewBox="0 0 150 36"
+  fill="none"
+>
+  <title>Form wordmark proposal</title>
+  <g
+    stroke="#171a18"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+    stroke-width="3.2"
+  >
+    <path d="M6 31V5H25M6 18H21" />
+    <path
+      d="M41 5H52C56 5 59 8 59 12V24C59 28 56 31 52 31H41C37 31 34 28 34 24V12C34 8 37 5 41 5Z"
+    />
+    <path d="M72 31V5H87C93 5 97 9 97 14S93 23 87 23H72M84 23L98 31" />
+    <path d="M110 31V5L126 19L142 5V31" />
+  </g>
+</svg>

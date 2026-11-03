@@ -1,0 +1,446 @@
+:root {
+  color-scheme: light;
+
+  --explore-paper: #f4f2eb;
+  --explore-ink: #171a18;
+  --explore-muted: #515850;
+  --explore-line: #c9cdc4;
+  --explore-blue: #134d82;
+  --explore-red: #cc382f;
+  --explore-yellow: #e8b73d;
+  --explore-white: #fff;
+  --explore-page: 1320px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--explore-paper);
+  color: var(--explore-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid currentcolor;
+  outline-offset: 4px;
+}
+
+.preview-header,
+.preview-shell,
+.compare-shell {
+  width: min(calc(100% - 3rem), var(--explore-page));
+  margin-inline: auto;
+}
+
+.preview-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--explore-line);
+}
+
+.preview-wordmark {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.direction-label,
+.back-link {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.back-link {
+  font-weight: 700;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(19rem, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  min-height: min(700px, calc(100vh - 112px));
+  padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+.product-panel {
+  position: relative;
+  display: grid;
+  min-height: 520px;
+  place-items: center;
+  overflow: hidden;
+  background: #ebe9e0;
+}
+
+.shirt-image {
+  position: relative;
+  z-index: 1;
+  width: min(80%, 510px);
+  max-height: 470px;
+  object-fit: contain;
+}
+
+.product-label,
+.product-note {
+  position: absolute;
+  z-index: 2;
+  font-size: 0.67rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-label {
+  inset: 1.2rem auto auto 1.35rem;
+}
+
+.product-note {
+  inset: auto 1.35rem 1.2rem auto;
+  color: var(--explore-muted);
+}
+
+.copy-panel {
+  max-width: 36rem;
+  padding-block: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 1.15rem;
+  color: var(--explore-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.copy-panel h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 5.4vw, 5.2rem);
+  font-weight: 750;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.hero-copy {
+  max-width: 38rem;
+  margin: 1.6rem 0 0;
+  color: var(--explore-muted);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+.hero-action {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  margin-top: 1.8rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--explore-ink);
+  background: var(--explore-ink);
+  color: var(--explore-white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-action:hover {
+  background: transparent;
+  color: var(--explore-ink);
+}
+
+.demo-note {
+  max-width: 32rem;
+  margin: 1.4rem 0 0;
+  color: var(--explore-muted);
+  font-size: 0.72rem;
+}
+
+.shared-copy-note {
+  margin: 0 0 2rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--explore-line);
+  color: var(--explore-muted);
+  font-size: 0.75rem;
+}
+
+.compare-shell {
+  padding-block: 3rem 5rem;
+}
+
+.compare-shell h1 {
+  max-width: 14ch;
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+/* Modernist direction: measured grid, strong type hierarchy, vector marks. */
+body[data-direction="modernist"] .hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+body[data-direction="modernist"] .product-panel {
+  border: 1px solid var(--explore-line);
+  background:
+    linear-gradient(
+      135deg,
+      transparent 18%,
+      #dcddd5 18.2%,
+      #dcddd5 18.8%,
+      transparent 19%
+    ),
+    var(--explore-paper);
+}
+
+body[data-direction="modernist"] .product-panel::after {
+  position: absolute;
+  inset: 12% 10% auto auto;
+  width: 1.1rem;
+  aspect-ratio: 1;
+  background: var(--explore-blue);
+  content: "";
+  transform: rotate(45deg);
+}
+
+body[data-direction="modernist"] .copy-panel {
+  border-left: 1px solid var(--explore-line);
+  padding: 1rem 0 1rem clamp(1.5rem, 3vw, 3rem);
+}
+
+body[data-direction="modernist"] .hero-action {
+  border-radius: 0;
+}
+
+/* Postmodernist direction: layered frames and quoted display language. */
+body[data-direction="postmodernist"] .hero {
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.88fr);
+}
+
+body[data-direction="postmodernist"] .product-panel {
+  min-height: 560px;
+  border: 0.65rem solid var(--explore-red);
+  background: var(--explore-blue);
+}
+
+body[data-direction="postmodernist"] .product-panel::before {
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgb(255 255 255 / 65%);
+  content: "";
+}
+
+body[data-direction="postmodernist"] .product-label,
+body[data-direction="postmodernist"] .product-note {
+  color: var(--explore-white);
+  padding: 0.2rem 0.35rem;
+  background: var(--explore-blue);
+}
+
+body[data-direction="postmodernist"] .shirt-image {
+  width: min(76%, 480px);
+  padding: 0.75rem;
+  background: var(--explore-paper);
+  box-shadow: 0.8rem 0.8rem 0 var(--explore-yellow);
+  transform: rotate(-2deg);
+}
+
+body[data-direction="postmodernist"] .copy-panel {
+  position: relative;
+  z-index: 2;
+  margin-inline-start: -2rem;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border-left: 0.75rem solid var(--explore-red);
+  background: var(--explore-blue);
+  box-shadow: 0.65rem 0.65rem 0 var(--explore-yellow);
+  color: var(--explore-white);
+}
+
+body[data-direction="postmodernist"] .eyebrow,
+body[data-direction="postmodernist"] .hero-copy,
+body[data-direction="postmodernist"] .demo-note {
+  color: var(--explore-white);
+}
+
+body[data-direction="postmodernist"] .copy-panel h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4.3vw, 4.4rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+body[data-direction="postmodernist"] .hero-action {
+  border-color: var(--explore-white);
+  background: var(--explore-white);
+  color: var(--explore-ink);
+}
+
+body[data-direction="postmodernist"] .hero-action:hover {
+  background: transparent;
+  color: var(--explore-white);
+}
+
+.compare-intro {
+  max-width: 48rem;
+  margin: 1rem 0 2rem;
+  color: var(--explore-muted);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.direction-card {
+  min-width: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--explore-line);
+}
+
+.direction-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.3rem;
+}
+
+.direction-card > p {
+  margin: 0.3rem 0;
+  color: var(--explore-muted);
+  font-size: 0.88rem;
+}
+
+.reference-link {
+  font-weight: 700;
+}
+
+.preview-shot {
+  display: block;
+  width: 100%;
+  margin-block: 1rem 0.5rem;
+  border: 1px solid var(--explore-line);
+  background: var(--explore-paper);
+}
+
+.mobile-shot {
+  display: block;
+  width: min(100%, 300px);
+  margin-block: 1rem 0.5rem;
+  border: 1px solid var(--explore-line);
+  background: var(--explore-paper);
+}
+
+.preview-link {
+  display: inline-block;
+  margin-block: 0.6rem 1.4rem;
+  font-weight: 700;
+}
+
+.notes-list {
+  margin: 0.7rem 0 0;
+  padding-inline-start: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.provisional-note {
+  margin-block: 2rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--explore-blue);
+  background: #e8eae4;
+  font-size: 0.85rem;
+}
+
+.provisional-note strong {
+  display: block;
+  margin-block-end: 0.25rem;
+}
+
+@media (width <= 760px) {
+  .preview-header,
+  .preview-shell,
+  .compare-shell {
+    width: min(calc(100% - 2rem), var(--explore-page));
+  }
+
+  .preview-header {
+    min-height: 68px;
+    gap: 0.7rem;
+  }
+
+  .direction-label,
+  .back-link {
+    font-size: 0.68rem;
+  }
+
+  .hero,
+  body[data-direction="modernist"] .hero,
+  body[data-direction="postmodernist"] .hero {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    min-height: 0;
+    padding-block: 1.25rem 2rem;
+  }
+
+  .product-panel,
+  body[data-direction="postmodernist"] .product-panel {
+    min-height: min(112vw, 430px);
+  }
+
+  .shirt-image {
+    max-height: 360px;
+  }
+
+  .copy-panel {
+    padding-block: 0.5rem 1rem;
+  }
+
+  body[data-direction="modernist"] .copy-panel {
+    padding-inline-start: 1.25rem;
+  }
+
+  body[data-direction="postmodernist"] .copy-panel {
+    margin-inline-start: 0;
+    padding: 1.4rem;
+  }
+
+  .copy-panel h1 {
+    max-width: 13ch;
+    font-size: clamp(2.8rem, 13vw, 4.2rem);
+  }
+
+  body[data-direction="postmodernist"] .copy-panel h1 {
+    font-size: clamp(2.5rem, 11vw, 3.7rem);
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .compare-shell {
+    padding-block: 2rem 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
