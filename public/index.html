@@ -46,6 +46,14 @@
         >Demo bag <span id="bag-count" class="bag-count">0</span></a
       >
     </header>
+    <p
+      id="bag-status"
+      class="bag-toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      hidden
+    ></p>
 
     <main id="main">
       <section class="product-section wrap" aria-labelledby="product-title">
@@ -149,13 +157,7 @@
           <h2 id="bag-title">Your demo bag.</h2>
         </div>
         <div class="bag-details">
-          <p
-            id="bag-status"
-            class="bag-message"
-            role="status"
-            aria-live="polite"
-            aria-atomic="true"
-          >
+          <p id="bag-summary" class="bag-message">
             Your demo bag is empty. Choose a size to try it.
           </p>
           <ul id="bag-items" class="bag-items"></ul>

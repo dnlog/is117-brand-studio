@@ -1,0 +1,111 @@
+.logo-demo-header .wordmark {
+  width: 150px;
+}
+
+.logo-proposal {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+.logo-proposal h1 {
+  max-width: 14ch;
+  margin-block-start: 0.7rem;
+}
+
+.proposal-intro {
+  max-width: 46rem;
+  margin-block-start: 1.2rem;
+  color: var(--color-muted);
+}
+
+.logo-samples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block-start: 3rem;
+}
+
+.logo-sample {
+  min-width: 0;
+  border-top: 1px solid var(--color-line);
+  padding-block-start: 1rem;
+}
+
+.logo-sample h2,
+.logo-review-notes h2 {
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.sample-note {
+  min-height: 2.8rem;
+  margin-block-start: 0.4rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.sample-stage {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.sample-stage-light {
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+}
+
+.sample-stage-dark {
+  background: #134d82;
+}
+
+.sample-logo {
+  height: auto;
+}
+
+.sample-logo-nav {
+  width: 150px;
+}
+
+.sample-logo-small {
+  width: 72px;
+}
+
+.logo-review-notes {
+  margin-block-start: 3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+}
+
+.logo-review-notes ul {
+  display: grid;
+  gap: 0.5rem;
+  margin-block: 1rem 0;
+  padding-inline-start: 1.2rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.proposal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-block-start: 2rem;
+  font-weight: 650;
+}
+
+@media (width <= 760px) {
+  .logo-samples {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-block-start: 2rem;
+  }
+
+  .sample-note {
+    min-height: 0;
+  }
+
+  .logo-review-notes {
+    margin-block-start: 2rem;
+  }
+}

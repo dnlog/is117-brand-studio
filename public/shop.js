@@ -7,14 +7,29 @@
   const sizeError = document.querySelector("#size-error");
   const bagCount = document.querySelector("#bag-count");
   const bagStatus = document.querySelector("#bag-status");
+  const bagSummary = document.querySelector("#bag-summary");
   const bagItems = document.querySelector("#bag-items");
   const clearBag = document.querySelector("#clear-bag");
   const sizes = ["S", "M", "L", "XL"];
   const bag = [];
+  let statusTimer;
+
+  const announceBagStatus = (message) => {
+    window.clearTimeout(statusTimer);
+    bagStatus.textContent = message;
+    bagStatus.hidden = false;
+    statusTimer = window.setTimeout(() => {
+      bagStatus.hidden = true;
+    }, 5000);
+  };
 
   const renderBag = () => {
     bagCount.textContent = String(bag.length);
     clearBag.disabled = bag.length === 0;
+    const itemWord = bag.length === 1 ? "item" : "items";
+    bagSummary.textContent = bag.length
+      ? `Your demo bag has ${bag.length} ${itemWord}.`
+      : "Your demo bag is empty. Choose a size to try it.";
     bagItems.replaceChildren();
     sizes.forEach((size) => {
       const quantity = bag.filter((item) => item === size).length;
@@ -27,6 +42,8 @@
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    window.clearTimeout(statusTimer);
+    bagStatus.hidden = true;
     const selected = form.querySelector('input[name="size"]:checked');
     if (!selected || !sizes.includes(selected.value)) {
       sizeError.hidden = false;
@@ -41,7 +58,9 @@
     bag.push(selected.value);
     renderBag();
     const itemWord = bag.length === 1 ? "item" : "items";
-    bagStatus.textContent = `Added a white T-shirt in size ${selected.value}. Your demo bag has ${bag.length} ${itemWord}.`;
+    announceBagStatus(
+      `Added a white T-shirt in size ${selected.value}. Your demo bag has ${bag.length} ${itemWord}.`,
+    );
   });
 
   form.addEventListener("change", () => {
@@ -54,8 +73,7 @@
   clearBag.addEventListener("click", () => {
     bag.length = 0;
     renderBag();
-    bagStatus.textContent =
-      "Your demo bag is empty. Choose a size to try it again.";
+    announceBagStatus("Your demo bag is empty. Choose a size to try it again.");
     form.querySelector('input[name="size"]:checked')?.focus();
   });
 })();
