@@ -5,7 +5,7 @@
   --color-ink: #171a18;
   --color-muted: #5a615b;
   --color-line: #d1d5cc;
-  --color-accent: #e3ef56;
+  --color-accent: #8fa4b1;
   --color-soft: #e8eae1;
   --color-white: #fff;
   --color-danger: #992e28;
@@ -294,11 +294,63 @@ p + p {
   font-size: 0.6rem;
 }
 
-.shirt-image {
-  width: 100%;
+.shirt-viewer {
+  min-height: 540px;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  justify-items: center;
+  padding: 3.8rem 1.2rem 1rem;
+}
+
+.shirt-view-image {
+  display: block;
+  width: min(100%, 410px);
+  max-height: 410px;
   height: auto;
   aspect-ratio: 800 / 880;
   object-fit: contain;
+}
+
+.shirt-view-label {
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.shirt-view-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(100%, 340px);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.shirt-view-controls button {
+  min-height: 2.75rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.shirt-view-controls button[aria-pressed="true"] {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.shirt-view-controls button:hover {
+  border-color: var(--color-ink);
+}
+
+.shirt-view-controls button:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
 }
 
 .image-caption {
@@ -337,6 +389,105 @@ p + p {
   margin-top: 0.6rem;
   font-size: 0.88rem;
   max-width: 430px;
+}
+
+.product-details {
+  max-width: 430px;
+  margin-top: 1.4rem;
+}
+
+.product-details h2 {
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.product-details .product-facts {
+  margin-top: 0.45rem;
+}
+
+.product-details .field-help {
+  margin-top: 0.55rem;
+}
+
+.styling-note {
+  max-width: 430px;
+  margin-top: 1.4rem;
+  padding: 0.85rem 1rem;
+  border-left: 2px solid var(--color-ink);
+  background: var(--color-white);
+}
+
+.style-goal {
+  margin-top: 1.4rem;
+}
+
+.style-goal-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.style-goal-option {
+  position: relative;
+  cursor: pointer;
+}
+
+.style-goal-option input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.style-goal-option span {
+  display: grid;
+  place-items: center;
+  min-height: 3.2rem;
+  padding: 0.65rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  text-align: center;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.style-goal-option input:checked + span {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.style-goal-option input:hover + span {
+  border-color: var(--color-ink);
+}
+
+.style-goal-option input:focus-visible + span {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 4px;
+}
+
+.style-goal-option input:focus-visible {
+  outline: none;
+}
+
+.styling-note-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.styling-note p:last-child {
+  margin-top: 0.45rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .price-row {
@@ -755,8 +906,17 @@ legend {
   border: 1px solid var(--color-line);
 }
 
+.product-visual-sample .shirt-viewer {
+  min-height: 320px;
+  padding: 3rem 1rem 0.75rem;
+}
+
+.product-visual-sample .shirt-view-image {
+  max-height: 240px;
+}
+
 .logo-board img {
-  width: min(100%, 380px);
+  width: min(100%, 150px);
 }
 
 .logo-variants {
@@ -780,13 +940,12 @@ legend {
 }
 
 .logo-small {
-  width: 110px;
+  width: 72px;
   height: auto;
 }
 
 .logo-mono {
-  width: 190px;
-  filter: brightness(0);
+  width: 150px;
 }
 
 .logo-variant p,
@@ -1081,8 +1240,13 @@ legend {
     margin-inline: auto;
   }
 
-  .shirt-image {
-    max-height: 530px;
+  .shirt-viewer {
+    min-height: 360px;
+    padding: 3.2rem 0.75rem 0.8rem;
+  }
+
+  .shirt-view-image {
+    max-height: 260px;
   }
 
   .product-information {
@@ -1231,6 +1395,10 @@ legend {
     font-size: 0.53rem;
   }
 
+  .shirt-viewer {
+    min-height: 320px;
+  }
+
   .image-caption {
     font-size: 0.53rem;
     padding: 1rem;
@@ -1279,6 +1447,15 @@ legend {
   .logo-board {
     min-height: 190px;
     padding: 2rem;
+  }
+
+  .product-visual-sample .shirt-viewer {
+    min-height: 250px;
+    padding-top: 2.7rem;
+  }
+
+  .product-visual-sample .shirt-view-image {
+    max-height: 175px;
   }
 
   .logo-variants {

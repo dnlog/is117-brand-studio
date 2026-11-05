@@ -10,9 +10,30 @@
   const bagSummary = document.querySelector("#bag-summary");
   const bagItems = document.querySelector("#bag-items");
   const clearBag = document.querySelector("#clear-bag");
+  const styleGoal = document.querySelector("#style-goal");
+  const styleGoalResult = document.querySelector("#style-goal-result");
+  const styleGoalCopy = document.querySelector("#style-goal-copy");
   const sizes = ["S", "M", "L", "XL"];
   const bag = [];
   let statusTimer;
+
+  const styleSuggestions = {
+    "low-key":
+      "Keep the rest of the outfit simple with muted colors and an easy layer.",
+    polished:
+      "Try dark trousers and a simple belt for a slightly more polished look.",
+  };
+
+  styleGoal?.addEventListener("change", () => {
+    const selected = styleGoal.querySelector(
+      'input[name="style-goal"]:checked',
+    );
+    const suggestion = selected && styleSuggestions[selected.value];
+    if (!suggestion || !styleGoalCopy || !styleGoalResult) return;
+
+    styleGoalCopy.textContent = suggestion;
+    styleGoalResult.hidden = false;
+  });
 
   const announceBagStatus = (message) => {
     window.clearTimeout(statusTimer);
