@@ -5,35 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="An unfinished, neutral T-shirt storefront for the IS117 Brand Studio. Build a brand through deliberate, visible design choices."
+      content="Form is an everyday white T-shirt with an understated design and clear information, without the hype."
     />
-    <title>Your Brand — neutral storefront starter</title>
+    <title>Form — the everyday white tee</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
+    <script src="shirt-view.js" defer></script>
     <script src="shop.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <aside class="starter-notice" aria-label="Starter information">
-      <span
-        ><strong>Unfinished by design.</strong> This is a neutral teaching
-        starter. Replace its identity after your brand decisions.</span
-      >
-      <a href="studio.html"
-        >Enter the studio <span aria-hidden="true">↗</span></a
+    <aside class="starter-notice" aria-label="Form brand statement">
+      <span><strong>Form / Everyday, without the extra noise.</strong></span>
+      <a href="#product-title"
+        >Explore the tee <span aria-hidden="true">↘</span></a
       >
     </aside>
     <header class="site-header wrap">
-      <a
-        class="brand-link"
-        href="index.html"
-        aria-label="Your Brand storefront home"
+      <a class="brand-link" href="index.html" aria-label="Form storefront home"
         ><img
           class="wordmark"
-          src="assets/wordmark.svg"
-          alt="Neutral starter wordmark"
-          width="175"
-          height="26"
+          src="assets/form-wordmark.svg"
+          alt="Form"
+          width="150"
+          height="36"
       /></a>
       <nav class="main-nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html" aria-current="page">Shop</a>
@@ -59,33 +54,119 @@
       <section class="product-section wrap" aria-labelledby="product-title">
         <div class="product-visual">
           <div class="visual-label">
-            <span>001 / The starting point</span><span>Unbranded</span>
+            <span>001 / Form everyday tee</span><span>Illustration / demo</span>
           </div>
-          <img
-            class="shirt-image"
-            src="assets/white-shirt.svg"
-            alt="Plain white, unbranded short-sleeved T-shirt"
-            width="800"
-            height="880"
-            fetchpriority="high"
-          />
+          <div class="shirt-viewer" data-shirt-viewer data-current-view="front">
+            <img
+              class="shirt-view-image"
+              data-shirt-view-image
+              src="assets/white-shirt.svg"
+              alt="Illustration of the unmarked front of a plain white T-shirt"
+              width="800"
+              height="880"
+              fetchpriority="high"
+            />
+            <p class="shirt-view-label" data-shirt-view-label>01 / Front</p>
+            <div
+              class="shirt-view-controls"
+              role="group"
+              aria-label="Choose shirt view"
+            >
+              <button type="button" data-shirt-view="front" aria-pressed="true">
+                Front
+              </button>
+              <button type="button" data-shirt-view="back" aria-pressed="false">
+                Back
+              </button>
+            </div>
+          </div>
           <div class="image-caption">
-            <span>One product. Room for your point of view.</span
+            <span>Illustrative front and back views / No prominent logo.</span
             ><span aria-hidden="true">↙</span>
           </div>
         </div>
         <div class="product-information">
           <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span> Neutral product
-            / demo only
+            <span class="status-dot" aria-hidden="true"></span> Form / everyday
+            tee / demo only
           </p>
-          <h1 id="product-title">The white<br />T-shirt.</h1>
-          <p class="product-intro">A plain shirt. A place to begin.</p>
+          <h1 id="product-title">A white tee.<br />Without the hype.</h1>
+          <p class="product-intro">
+            An everyday white T-shirt with an understated design and clear
+            information, without the hype.
+          </p>
           <p class="muted product-description">
-            This starter has a working product page and room for a brand. Its
-            audience, personality, message, and visual direction are still yours
-            to decide.
+            Made for everyday plans, from a coffee stop to the rest of the day.
+            No prominent logo competing for attention.
           </p>
+          <section
+            class="product-details"
+            aria-labelledby="product-details-title"
+          >
+            <h2 id="product-details-title">Product details</h2>
+            <dl class="product-facts">
+              <div>
+                <dt>Color</dt>
+                <dd>White</dd>
+              </div>
+              <div>
+                <dt>Fabric composition</dt>
+                <dd>Not supplied</dd>
+              </div>
+              <div>
+                <dt>Fabric weight</dt>
+                <dd>Not supplied</dd>
+              </div>
+              <div>
+                <dt>Fit and measurements</dt>
+                <dd>Not supplied</dd>
+              </div>
+              <div>
+                <dt>Care details</dt>
+                <dd>Not supplied</dd>
+              </div>
+            </dl>
+            <p class="field-help">
+              Classroom demo only. No supplier or product documentation was
+              provided.
+            </p>
+          </section>
+          <aside class="styling-note" aria-labelledby="styling-note-title">
+            <p id="styling-note-title" class="styling-note-label">
+              A styling note
+            </p>
+            <p>
+              Pair with dark denim and simple shoes for a low-key coffee-shop
+              outfit.
+            </p>
+          </aside>
+          <fieldset class="style-goal" id="style-goal">
+            <legend>Want to explore another direction?</legend>
+            <p id="style-goal-help" class="field-help">
+              Optional. Choose a direction for a matching outfit idea.
+            </p>
+            <div class="style-goal-options">
+              <label class="style-goal-option">
+                <input type="radio" name="style-goal" value="low-key" />
+                <span>Keep it low-key</span>
+              </label>
+              <label class="style-goal-option">
+                <input type="radio" name="style-goal" value="polished" />
+                <span>A little more polished</span>
+              </label>
+            </div>
+          </fieldset>
+          <aside
+            id="style-goal-result"
+            class="styling-note"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            <p class="styling-note-label">One more idea</p>
+            <p id="style-goal-copy"></p>
+          </aside>
           <div class="price-row">
             <p class="price">$28 <span>USD</span></p>
             <span class="micro-label">Fictional demo price</span>
@@ -130,20 +211,6 @@
             A classroom interaction, using fictional product data. No order,
             payment, or personal information is collected.
           </p>
-          <dl class="product-facts">
-            <div>
-              <dt>Color</dt>
-              <dd>White</dd>
-            </div>
-            <div>
-              <dt>Brand identity</dt>
-              <dd>Not decided yet</dd>
-            </div>
-            <div>
-              <dt>Product claims</dt>
-              <dd>None supplied</dd>
-            </div>
-          </dl>
         </div>
       </section>
 
@@ -171,26 +238,22 @@
       </section>
 
       <section class="starter-next wrap" aria-labelledby="next-title">
-        <p class="eyebrow">For the person building this site</p>
-        <h2 id="next-title">The shirt stays.<br />The story is your work.</h2>
+        <p class="eyebrow">Form / A considered everyday</p>
+        <h2 id="next-title">Simple to wear.<br />Easy to make your own.</h2>
         <div>
           <p>
-            Choose who this is for, decide what the brand should express, and
-            make those choices visible. Keep the storefront and its
-            <a href="styleguide.html">live style guide</a> in sync.
+            Keep the rest of the outfit simple, or add a small detail for a
+            slightly more polished feel. Start with what feels like you.
           </p>
-          <a class="button button-secondary" href="studio.html"
-            >See the studio brief <span aria-hidden="true">↗</span></a
+          <a class="button button-secondary" href="#product-form"
+            >Choose a size <span aria-hidden="true">↗</span></a
           >
         </div>
       </section>
     </main>
 
     <footer class="site-footer wrap">
-      <p>
-        IS117 Brand Studio <span class="footer-separator"> / </span> Neutral
-        starter
-      </p>
+      <p>Form <span class="footer-separator"> / </span> IS117 Brand Studio</p>
       <p class="footer-tagline">Fictional product. Real design decisions.</p>
       <a href="https://github.com/kaw393939/is117-brand-studio#readme"
         >Project README <span aria-hidden="true">↗</span></a
