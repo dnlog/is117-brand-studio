@@ -98,3 +98,7 @@ Write a short result and link only evidence that exists. A passing browser check
 ## Later
 
 Learner idea for a later cycle: offer multiple white-shirt cuts, such as V-neck and crewneck, while keeping Form's message and vibe. The learner agreed to defer this until after BRAND-001; timing is not chosen. Agree the later scope before adding a spec ID.
+
+## CI repair after the first push
+
+GitHub Actions failed the `check` job on commit `3c45267` during lint. The `pages-status` job was skipped because it depends on `check`; `publish` was skipped because it depends on both prior jobs. Locally, the same check reported an invalid `aria-label` on a `div` and an unnamed `aside` in the style-guide product sample. Those markup issues and CSS selector-order lint errors are fixed in the current uncommitted edits. A subsequent local `npm run check` passed formatting, lint, and all 7 server tests; all 10 browser tests printed `ok`, but the command did not exit or show a final summary and was interrupted. The fix has not yet been committed, pushed, or rerun in Actions.
