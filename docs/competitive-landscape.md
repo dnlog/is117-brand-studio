@@ -16,6 +16,28 @@ The pages make different kinds of decision information visible: material and fit
 
 The learner chose **fabric composition** as the first evidence topic for Form. A useful next source would be the actual product listing, supplier specification, or garment label for the shirt being proposed. Form could then show the verified composition and any supporting certification or sourcing information, while marking anything unavailable. The current Form demo has no such documentation. The fictional $28 demo price is not a chosen real price and should not be used to position Form against these products.
 
+## Brand-position alternatives and working choice
+
+These are two strategic positions for the brand: each says what Form would help its audience get from the shirt and page. They are positioning alternatives, not two visual styles.
+
+### Position A — The evidence-first everyday tee
+
+For people choosing a white tee who want to make an informed decision, Form makes product information clear and easy to check, including plainly marking details that have not been supplied. Its difference would be the clarity of the decision information, not an unverified claim that the shirt is higher quality.
+
+**Evidence boundary:** The competitor pages show examples of information a store can provide. They do not establish any facts about Form's shirt. Form's material, fit, care, and other product details remain unsupplied until an actual listing, supplier specification, or garment label supports them.
+
+### Position B — The quiet design staple
+
+For people who want an understated shirt for an everyday outing, Form offers a simple white tee with an intentional design and no prominent logo. Its difference would be a low-key visual impression and styling guidance, rather than a promise of superior materials or performance.
+
+**Evidence boundary:** This direction follows the learner's stated preference for a distinctive but not billboard-like design and the approved understated wordmark. It is a design hypothesis, not evidence that shoppers prefer this look or that the physical shirt has any particular quality.
+
+### Working choice: Position A
+
+The working choice is Position A because the recorded primary and secondary persona needs both involve judging the shirt before choosing: the coffee-shop visitor wants to assess the design and available product information, while the layering shopper needs fabric-weight and measurement details. The learner also chose fabric composition as Form's first evidence topic and approved clearly labeled unknowns. Clear, checkable information therefore gives Form a more useful promise for this audience than an appearance-led position alone. The understated design can still shape the visuals and voice, but it is not a second competing brand position.
+
+This choice is an AI synthesis of decisions already recorded in the project, for learner review. It is a positioning hypothesis, not validated customer research or evidence about Form's physical shirt.
+
 ## Persona hypothesis
 
 **Low-key coffee-shop visitor** is a fictional planning persona based only on the learner's stated audience idea. It is an assumption to guide a first page, not a real interview participant or validated customer profile.
